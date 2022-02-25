@@ -9,34 +9,34 @@ if __name__ == "__main__":
 #把下載資料傳輸到MSSQL建立資料表
 
 #用來連接MSSQL的方法
-def MSSQL_CONNENT():
-
-    import pymssql
-
-    server = "127.0.0.1"
-    username = "sa"
-    password = "9487"
-    database = "testDB101"
-
-
-    try:
-        conn = pymssql.connect(server,username,password,database)
-        print("連接成功!!")
-        cursor = conn.cursor()
-        return cursor,conn
-    except Exception as ex:
-        print(ex)
-
-def MSSQL_SEARCH():
-    cursor,conn = MSSQL_CONNENT()
-
-    cursor.execute("select * from 員工資料表")
-    row = cursor.fetchone()
-    while row:
-        print("員工ID=%d,員工姓名=%s,員工薪水=%d"%(row[0],row[1],row[2]))
-        row = cursor.fetchone()
-
-    conn.close()
+# def MSSQL_CONNENT():
+#
+#     import pymssql
+#
+#     server = "127.0.0.1"
+#     username = "sa"
+#     password = "9487"
+#     database = "testDB101"
+#
+#
+#     try:
+#         conn = pymssql.connect(server,username,password,database)
+#         print("連接成功!!")
+#         cursor = conn.cursor()
+#         return cursor,conn
+#     except Exception as ex:
+#         print(ex)
+#
+# def MSSQL_SEARCH():
+#     cursor,conn = MSSQL_CONNENT()
+#
+#     cursor.execute("select * from 員工資料表")
+#     row = cursor.fetchone()
+#     while row:
+#         print("員工ID=%d,員工姓名=%s,員工薪水=%d"%(row[0],row[1],row[2]))
+#         row = cursor.fetchone()
+#
+#     conn.close()
 
 
 
