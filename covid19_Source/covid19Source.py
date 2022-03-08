@@ -16,7 +16,9 @@ class covid19Source:
 
     # -----------下載資料開始--------------#
     def __init__(self):
+        #covid19 API網址
         self.url = "https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json"
+        #宣告covid19log物件
         self.covid19_Log = Covid19log("covid19_Log")
 
     def Download_covid19_data(self):

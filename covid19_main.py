@@ -6,5 +6,6 @@ from covid19_Schedule import Covid19Schedule
 
 #建立Covid19排程的物件
 Covid19_Main = Covid19Schedule()
+#執行Covid19排程
 Covid19_Main.schedule()
 

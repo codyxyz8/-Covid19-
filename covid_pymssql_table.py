@@ -12,6 +12,7 @@ from covid19_log import Covid19log
 class Covid19:
 
     def __init__(self):
+        #宣告covid19_log物件
         self.covid19_Log = Covid19log("covid19_Log")
 
     def Covid19_Data(self):

@@ -38,7 +38,7 @@ class Covid19log:
         self.fileHandler.setFormatter(self.formatter)
         self.logger.addHandler(self.fileHandler)
 
-
+    #以下為各個級別資訊的方法
     def debug(self,msg):
         self.logger.debug(msg)
 
