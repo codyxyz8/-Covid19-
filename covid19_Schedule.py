@@ -108,7 +108,6 @@ class Covid19Schedule:
             self.event2 = self.s.enter(self.time_interval,1,Covid19.MSSQL_Covid19_Connent,argument=(self.covid19_data,))
             self.event3 = self.s.enter(self.time_interval,2,Covid19.Create_Covid19_Table,argument=(self.covid19_data,))
             self.s.run()
-            #問題點
             print(f"end time:{datetime.now()}")
             self.covid19_Log.info("執行完畢!!!")
         except ValueError:

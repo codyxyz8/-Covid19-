@@ -22,12 +22,12 @@ class Covid19log:
         self.logger.setLevel(logging.INFO)
 
 
-        #console handler 將log資訊輸出到console
+        #consolehandler 將log資訊輸出到console
         self.consoleHandler = logging.StreamHandler()
         self.consoleHandler.setLevel(logging.INFO)
         self.consoleHandler.setFormatter(self.formatter)
         self.logger.addHandler(self.consoleHandler)
-        #file handler 將log資訊輸出到日誌檔
+        #filehandler 將log資訊輸出到日誌檔
         self.logfilename = datetime.now().strftime("%Y-%m-%d_%H_%M_%S.log")
         self.fileHandler = logging.FileHandler(self.dir_path+self.logs_folder+"/"+self.logfilename,"w","utf-8")
         self.fileHandler.setLevel(logging.INFO)

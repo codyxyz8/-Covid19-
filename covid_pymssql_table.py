@@ -21,7 +21,7 @@ class Covid19:
 
 
     def MSSQL_Covid19_Connent(self):
-        # 運用pymmsql的函式與MSSQL連接
+        #運用pymmsql的函式與MSSQL連接
         import pymssql
 
         #引用env檔帶入pymmsql所需的敏感資訊

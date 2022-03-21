@@ -93,7 +93,7 @@ class covid19Source:
     def Get_Lastfile_Path(self):
 
     #從covid19_DataFolder取出最新下載資料的絕對路徑
-    #:return:lastestfilepath
+    #return:lastestfilepath
 
         import os
         foldername = "covid19_DataFolder"
