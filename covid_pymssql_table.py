@@ -12,7 +12,7 @@ from covid19_log import Covid19log
 class Covid19:
 
     def __init__(self):
-        #宣告covid19_log物件
+        #建立covid19_log物件，執行記錄檔撰寫
         self.covid19_Log = Covid19log("covid19_Log")
 
     def Covid19_Data(self):
@@ -98,9 +98,6 @@ class Covid19:
             self.covid19_Log.error("cursor未能順利執行!!!")
         except pymssql.ProgrammingError:
             self.covid19_Log.error("SQL語法錯誤!!!")
-        # 關閉記錄檔
-        finally:
-            self.covid19_Log.close()
 
 
     def Select_Covid19_Table(self):
@@ -109,7 +106,7 @@ class Covid19:
         #除錯與例外處理
         try:
             cursor.execute("""
-            SELECT * FROM [COVID19] WHERE 縣市='嘉義市'
+            SELECT * FROM [COVID19] WHERE 縣市='新北市'
             """)
             for row in cursor:
                 print("識別碼:%s,個案研判日:%s,縣市:%s,鄉鎮:%s,性別:%s,年齡層_以五歲為區間:%s,確定病例數:%d"%(row['識別編號'],row['個案研判日'],row['縣市'],row['鄉鎮'],row['性別'],row['年齡層_以五歲為區間'],row['確定病例數']))
@@ -126,9 +123,6 @@ class Covid19:
             self.covid19_Log.error("cursor未能順利執行!!!")
         except pymssql.ProgrammingError:
             self.covid19_Log.error("SQL語法錯誤!!!")
-        #關閉記錄檔
-        finally:
-            self.covid19_Log.close()
 
 
 

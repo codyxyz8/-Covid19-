@@ -16,10 +16,11 @@ class Covid19Schedule:
         self.covid19_data = Covid19()
         #現在時間
         self.now_time = datetime.now()
-        #建立記錄檔物件
+        #建立covid19_log物件，執行記錄檔撰寫
         self.covid19_Log = Covid19log("covid19_Log")
-        self.covid19_Log.consolehandler()
-        self.covid19_Log.filehandler()
+        #建立自訂的timer物件
+        self.updatetime = self.timer()
+        
 
 
     def timer(self):
@@ -28,7 +29,7 @@ class Covid19Schedule:
             #預計更新的時間，預設為衛福部記者會結束後一個小時，也就是每日的下午三點定時下載
             #當日未到下午三點的時間判斷式
             if 0<self.now_time.hour <15:
-                self.updatetime = datetime.strptime(str(self.now_time.year)+"-"+str(self.now_time.month)+"-"+str(self.now_time.day)+" 15:00:00","%Y-%m-%d %H:%M:%S")
+                self.updatetime = datetime.strptime(str(self.now_time.year)+"-"+str(self.now_time.month)+"-"+str(self.now_time.day)+" 12:55:00","%Y-%m-%d %H:%M:%S")
             #各月份(除了二月)的時間判斷式
             elif 15<self.now_time.hour<=23 and self.now_time.month in [1,3,5,7,8,10,12]:
                 if self.now_time.day<31:
@@ -92,7 +93,6 @@ class Covid19Schedule:
     def schedule(self):
 
         try:
-            self.updatetime = self.timer()
             #計算預定更新時間與現在時間的時間間隔，並換算成秒數
             self.time_interval = (self.updatetime-self.now_time).total_seconds()
             print(f"更新時間:{self.updatetime}")
@@ -115,8 +115,12 @@ class Covid19Schedule:
             self.covid19_Log.error("數值錯誤!!!")
         except NameError:
             self.covid19_Log.error("變數定義有問題!!!")
-        except Exception:
+        except Exception as e:
             self.covid19_Log.error("其他錯誤!!!")
+            print(e)
+        # 關閉記錄檔
+        finally:
+            self.covid19_Log.close()
 
     def sche_cancel(self):
         #取消排程的函式
