@@ -27,6 +27,8 @@ Python在此專案主要應用在爬蟲、資料庫連接以及定時排程等�
 本章將介紹本專案的執行流程，以及呈現專案執行成果。
 1. 首先到covid19_main的檔案
 
+![主執行流程]
+
 
 ## 四、PowerBI資料分析
 [Covid19資料分析_PowerBI連結](https://app.powerbi.com/view?r=eyJrIjoiOTc1MjkxZDItNDNjZS00OWVlLWI3N2UtYjM4MDgyMWE5ZjFiIiwidCI6ImY3Njk4MThiLWI2MmYtNGY0ZS04OGJkLWI0MjJlOTA3YTkwMyJ9)
