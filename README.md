@@ -25,9 +25,20 @@ Python在此專案主要應用在爬蟲、資料庫連接以及定時排程等�
 
 ## 三、本專案執行流程
 本章將介紹本專案的執行流程，以及呈現專案執行成果。
-1. 首先到covid19_main的檔案
+1. 首先到covid19_main的檔案，會看到這段程式碼，接著在此頁面按下執行。
+![Imgur](https://i.imgur.com/UU6c5PU.png)
+2. 在console就會看到「排程成功」的訊息，以及預定執行時間與剩餘秒數。
+![Imgur](https://i.imgur.com/9vQgloq.png)
+3. 當執行時間一到，就會開始執行本專案所設計的程式碼，如有順利執行成功將會出現此畫面。這當中會有出現程式執行的記錄訊息，方便程式碼的除錯與例外處理。
+![Imgur](https://i.imgur.com/vPnTA49.png)
+4. 如果是在今日三點以後執行covid19_main，同樣會出現「排程成功」的訊息，並顯示明日預定的執行時間。
+![Imgur](https://i.imgur.com/0t1VnFx.png)
+5. 本專案有設計查詢資料庫的功能，透過執行下列程式碼，先建立Covid19類別物件，接著與SQL資料庫進行連接，最後執行Select的查詢語法。
+![Imgur](https://i.imgur.com/sO9lY8S.png)
+6. 查詢結果如下，如查詢成功將會出現「查詢完畢」的訊息。
+![Imgur](https://i.imgur.com/RYbATui.png)
 
-![主執行流程]
+
 
 
 ## 四、PowerBI資料分析
